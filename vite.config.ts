@@ -20,4 +20,13 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    proxy: {
+      '/photos': {
+        target: 'http://localhost:8000/photos',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/photos/, ''),
+      },
+    }
+  }
 })
