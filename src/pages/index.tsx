@@ -23,7 +23,6 @@ function HomePage() {
   const setRefElement = (el: HTMLElement) => {
     if (!el) return;
     div_ref.current = el;
-    console.log(div_ref.current?.offsetWidth);
     setImageWidth(div_ref.current.offsetWidth);
   };
 
