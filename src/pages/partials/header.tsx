@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../../../fontello/css/fontello.css'
 
 interface PhotoCategories {
     id: number;
@@ -25,7 +26,10 @@ const Header = () => {
     
     return (
         <header className="">
-            <h1>Emilia Lorentsen Fotografia</h1>
+            <h1>
+                Emilia Lorentsen Fotografia
+                <a href='https://www.instagram.com/lorentsen.emilia/' target='_blank'><i className="icon-instagram"/></a>
+            </h1>
             <div className="row navigation-panel">
                 <p className="col-3"><a href='/'>Home</a></p>
                 <ul className="col-3">
