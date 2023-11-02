@@ -1,5 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import './pages/404.scss';
+@import './pages/homepage.scss';
 
 .container {
     // background: violet;
@@ -32,27 +33,22 @@ header {
         padding-bottom: 15px;
         background: #cca9cf;
         p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             font-size: 28px;
             font-weight: 700;
+            width: auto;
 
             margin: 0;
         }
 
         ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin: 0;
+            width: auto;
 
             li {
                 display: none;
                 position: absolute;
                 z-index: 1;
-                padding-top: 56px;
+                // padding-top: 30px;
 
                 ul {
                     font-size: 24px;
@@ -60,6 +56,10 @@ header {
                     background: #cca9cf;
                     padding: 20px 20px;
                     border-top: 1px dashed gray;
+
+                    &:first-of-type {
+                        border-top: none;
+                    }
                 }
             }
 
