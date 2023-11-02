@@ -47,7 +47,7 @@ function HomePage() {
               {photos.map((photo, index) => {
                 return (
                   <div ref={ref => { index === photos.length - 1 && setRefElement(ref)  }} key={index} style={{'height':imageWidth}} className='col-4 d-flex justify-content-center align-items-center main_page--photos__container--photo'>
-                    <img src={photo.image} />
+                    <img src={photo.image} alt={photo.name} />
                   </div>
                 );
               })}
