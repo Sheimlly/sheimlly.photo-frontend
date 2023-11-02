@@ -26,7 +26,7 @@ const Header = () => {
     return (
         <header className="">
             <h1>
-                Emilia Lorentsen Fotografia
+                Emilia Lorentsen
                 <a href='https://www.instagram.com/lorentsen.emilia/' target='_blank'><i className="icon-instagram"/></a>
             </h1>
             <div className="navigation-panel">
