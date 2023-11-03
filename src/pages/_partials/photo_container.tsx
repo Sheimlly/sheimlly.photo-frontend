@@ -5,7 +5,7 @@ interface PhotosListProps {
     photos: Photos[];
     c_name: boolean;
     s_name: boolean;
-    date: string;
+    date: boolean;
     always_visible_info: boolean;
 }
 
@@ -44,7 +44,9 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } 
                                 { s_name &&
                                     <p><a href={`/sessions/${photo.session}`}>{photo.session_name}</a></p>
                                 }
-                                <p>{date}</p>
+                                { date &&
+                                    <p>{photo.date_created}</p>
+                                }
                             </div>
                         }
                     </div>
@@ -59,7 +61,7 @@ PhotosContainer.defaultProps = {
     c_name: true,
     s_name: true,
     always_visible_info: false,
-    date: '',
+    date: true,
 }
 
 export default PhotosContainer

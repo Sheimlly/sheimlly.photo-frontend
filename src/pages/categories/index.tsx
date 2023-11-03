@@ -31,7 +31,7 @@ const CategoriesPhotos = () => {
             <section className='site_header container my-5'>
                 <h2>Categories</h2>
             </section>
-            <PhotosContainer photos={photos} s_name={false} always_visible_info={true} />
+            <PhotosContainer photos={photos} s_name={false} always_visible_info={true} date={false} />
         </>
     )
 }

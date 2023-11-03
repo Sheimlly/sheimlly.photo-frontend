@@ -12,7 +12,7 @@ const SessionsPhotos = () => {
           .then(response => {
             response.data.map((session) => {
                 axios
-                    .get('/photos/', 
+                    .get<Photos[]>('/photos/', 
                         {
                             params: {
                                 session: session.id
