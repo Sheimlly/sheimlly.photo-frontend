@@ -38,7 +38,7 @@ const Header = () => {
                             <li>
                                 <ul><a href='/categories'>All</a></ul>
                                 {categories.map((category) => {
-                                    return <ul key={category.id}><a href={'/categories/' + category.name}>{category.name}</a></ul>
+                                    return <ul key={category.id}><a href={`/categories/${category.name}`}>{category.name}</a></ul>
                                 })}
                             </li>
                         </ul>

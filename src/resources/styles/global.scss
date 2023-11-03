@@ -1,108 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import './pages/404.scss';
 @import './pages/homepage.scss';
-
-.container {
-    // background: violet;
-}
+@import './partials/header.scss';
+@import './partials/footer.scss';
+@import './partials/photos_container.scss';
 
 h1 {
     font-size: 42px;
     font-weight: 800;
-}
-
-header {
-    
-    h1 {
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 25px;
-
-        a {
-            color: #000000;
-            margin-left: 25px;
-
-            &:hover {
-                opacity: 50%;
-            }
-        }
-    }
-
-    .navigation-panel {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        background: #cca9cf;
-        p {
-            font-size: 28px;
-            font-weight: 700;
-            width: auto;
-
-            margin: 0;
-        }
-
-        ul {
-            margin: 0;
-            width: auto;
-
-            li {
-                display: none;
-                position: absolute;
-                z-index: 1;
-                // padding-top: 30px;
-
-                ul {
-                    font-size: 24px;
-                    font-weight: 700;
-                    background: #cca9cf;
-                    padding: 20px 20px;
-                    border-top: 1px dashed gray;
-
-                    &:first-of-type {
-                        border-top: none;
-                    }
-                }
-            }
-
-            &:hover {
-                li {
-                    display: block;
-                }
-            }
-        }
-
-        
-
-        a {
-            color: #000000;
-            text-decoration: none;
-
-            &:hover {
-                opacity: 50%;
-            }
-        }
-    }
-}
-
-footer {
-    background: #cca9cf;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-
-    p {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 600;
-    }
-
-    a {
-        color: #000000;
-        text-decoration: none;
-    }
-
-    .socials_contaienr {
-        i {
-            font-size: 30px;
-        }
-    }
 }

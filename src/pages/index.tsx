@@ -1,22 +1,10 @@
-import { useState, useEffect, useRef, useLayoutEffect, createRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import PhotosContainer from './_partials/photo_container';
+import { Photos } from './_interfaces';
 
-interface MainPagePhotos {
-  id: number;
-  name: string;
-  session_name?: string;
-  session_name_pl?: string;
-  image: string;
-  category_name: string;
-  category_name_pl: string;
-  category: number;
-  date_created: string;
-  date_uploaded: string;
-  main_page: string;
-}
-
-function HomePage() {
-  const [photos, setPhotos] = useState<MainPagePhotos[] | []>([]);
+const HomePage = () => {
+  const [photos, setPhotos] = useState<Photos[] | []>([]);
   const div_ref = useRef<HTMLElement>(null);
   const [imageWidth, setImageWidth] = useState<number>(0);
 
@@ -34,7 +22,13 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get<MainPagePhotos[]>('/photos/photos/?main_page=True')
+      .get<Photos[]>('/photos/',
+        {
+          params: {
+            main_page: true,
+          }
+        }
+      )
       .then(response => {
         setPhotos(response.data);
       });
@@ -42,17 +36,7 @@ function HomePage() {
 
   return (
     <>
-        <section className='container main_page--photos my-3'>
-            <div className='row main_page--photos__container'>
-              {photos.map((photo, index) => {
-                return (
-                  <div ref={ref => { index === photos.length - 1 && setRefElement(ref)  }} key={index} style={{'height':imageWidth}} className='col-4 d-flex justify-content-center align-items-center main_page--photos__container--photo'>
-                    <img src={photo.image} alt={photo.name} />
-                  </div>
-                );
-              })}
-            </div>
-        </section>
+        <PhotosContainer photos={photos} />
     </>
   );
 }
