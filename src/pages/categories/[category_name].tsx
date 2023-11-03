@@ -6,9 +6,6 @@ import { Photos, Categories } from './../_interfaces';
 
 const CategoryPhotos = () => {
     const { category_name } = useParams<string>();
-    console.log(category_name);
-
-    const [category, setCategory] = useState<Categories>();
     const [photos, setPhotos] = useState<Photos[]>([]);
 
     useEffect(() => {
@@ -21,7 +18,6 @@ const CategoryPhotos = () => {
             }
           )
           .then(response => {
-            setCategory(response.data[0]);
             axios
                 .get<Photos[]>('/photos/', 
                     {
