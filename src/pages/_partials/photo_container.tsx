@@ -30,7 +30,7 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } 
     })
 
     return (
-        <section className='container photos my-3'>
+        <section className='container photos my-5'>
             <div className='row photos__container'>
                 {photos.map((photo, index) => {
                 return (
@@ -42,7 +42,7 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } 
                                     <p><a href={`/categories/${photo.category_name}`}>{photo.category_name}</a></p>
                                 }
                                 { s_name &&
-                                    <p>{photo.session_name}</p>
+                                    <p><a href={`/sessions/${photo.session}`}>{photo.session_name}</a></p>
                                 }
                                 <p>{date}</p>
                             </div>
