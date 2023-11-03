@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PhotosContainer from './_partials/photo_container';
 import { Photos } from './_interfaces';

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import PhotosContainer from '../_partials/photo_container';
@@ -34,6 +34,9 @@ const CategoryPhotos = () => {
 
     return (
         <>
+            <section className='site_header container my-5'>
+                <h2>{category_name}</h2>
+            </section>
             <PhotosContainer photos={photos} c_name={false} s_name={false} />
         </>
     )
