@@ -5,10 +5,11 @@ interface PhotosListProps {
     photos: Photos[];
     c_name: boolean;
     s_name: boolean;
+    date: string;
     always_visible_info: boolean;
 }
 
-const PhotosContainer = ( { photos, c_name, s_name, always_visible_info } : PhotosListProps) => {
+const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } : PhotosListProps) => {
     const div_ref = useRef<HTMLElement>(null);
     const [imageWidth, setImageWidth] = useState<number>(0);
 
@@ -42,7 +43,8 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info } : Phot
                                 }
                                 { s_name &&
                                     <p>{photo.session_name}</p>
-                                } 
+                                }
+                                <p>{date}</p>
                             </div>
                         }
                     </div>
@@ -57,6 +59,7 @@ PhotosContainer.defaultProps = {
     c_name: true,
     s_name: true,
     always_visible_info: false,
+    date: '',
 }
 
 export default PhotosContainer
