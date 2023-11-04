@@ -30,11 +30,11 @@
 
             &:hover {
                 .photo_with_info {
-                    opacity: 0.5 !important;
+                    opacity: 0.5;
                 }
 
                 .photos__container--photo-info {
-                    display: flex !important;
+                    display: flex;
                 }
             }
         }

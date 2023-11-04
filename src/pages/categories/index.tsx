@@ -2,9 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import PhotosContainer from '../_partials/photo_container';
 import { Photos, Categories } from './../_interfaces';
+import { useTranslation } from 'react-i18next';
 
 const CategoriesPhotos = () => {
     const [photos, setPhotos] = useState<Photos[]>([]);
+
+    const { t } = useTranslation()
 
     useEffect(() => {
         axios
@@ -29,7 +32,7 @@ const CategoriesPhotos = () => {
     return (
         <>
             <section className='site_header container my-5'>
-                <h2>Categories</h2>
+                <h2>{t('categories')}</h2>
             </section>
             <PhotosContainer photos={photos} s_name={false} always_visible_info={true} date={false} />
         </>

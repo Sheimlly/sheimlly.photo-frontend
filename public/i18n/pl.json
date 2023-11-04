@@ -7,5 +7,12 @@
         },
         "sessions": "Sesje",
         "about_me": "O mnie"
-    }
+    },
+    "categories": "Kategorie",
+    "sessions": "Sesje",
+    "about_me": {
+        "title": "O mnie",
+        "contact_info": "Kontakt"
+    },
+    "404": "nie znaleziono strony"
 }

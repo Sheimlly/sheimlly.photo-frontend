@@ -8,7 +8,6 @@ export type Path =
   | `/about_me`
   | `/categories`
   | `/categories/:category_name`
-  | `/contact`
   | `/sessions`
   | `/sessions/:id`
 
