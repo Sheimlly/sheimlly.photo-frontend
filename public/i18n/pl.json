@@ -1,0 +1,11 @@
+{
+    "header": {
+        "home": "Strona główna",
+        "categories": {
+            "name": "Kategorie",
+            "all": "Wszystkie"
+        },
+        "sessions": "Sesje",
+        "about_me": "O mnie"
+    }
+}

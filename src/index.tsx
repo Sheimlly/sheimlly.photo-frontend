@@ -3,6 +3,7 @@ import { Routes } from '@generouted/react-router'
 import './resources/styles/global.scss'
 import Header from './pages/_partials/header'
 import Footer from './pages/_partials/footer'
+import "./i18n";
 
 createRoot(document.getElementById('root')!).render(
   <>

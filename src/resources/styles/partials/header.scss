@@ -1,16 +1,37 @@
 header {
     
-    h1 {
-        text-align: center;
+    .title-panel {
         margin-top: 25px;
         margin-bottom: 25px;
 
-        a {
-            color: #000000;
-            margin-left: 25px;
+        &--socials {
+            a {
+                color: #000000;
+    
+                &:hover {
+                    opacity: 50%;
+                }
+            }
 
-            &:hover {
-                opacity: 50%;
+            i {
+                font-size: 30px;
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+        
+        &--languages {
+            p {
+                margin: 0 5px;
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 50%;
+                }
             }
         }
     }

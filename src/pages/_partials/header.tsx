@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../../fontello/css/fontello.css'
+import { useTranslation } from 'react-i18next';
 
 interface PhotoCategories {
     id: number;
@@ -9,6 +10,12 @@ interface PhotoCategories {
 }
 
 const Header = () => {
+    const { i18n, t } = useTranslation()
+
+    const changeLang = (lang_code: string) => {
+        i18n.changeLanguage(lang_code);
+    }
+
     const [categories, setCategories] = useState<PhotoCategories[] | []>([]);
 
     useEffect(() => {
@@ -25,25 +32,34 @@ const Header = () => {
     
     return (
         <header className="">
-            <h1>
-                Emilia Lorentsen
-                <a href='https://www.instagram.com/lorentsen.emilia/' target='_blank'><i className="icon-instagram"/></a>
-            </h1>
+            <div className='title-panel d-flex justify-content-around'>
+                <div className='title-panel--socials d-flex align-items-center'>
+                    <a href='https://www.instagram.com/lorentsen.emilia/' target='_blank'><i className="icon-instagram"/></a>
+                </div>
+                <h1 className='title-panel--title'>
+                    Emilia Lorentsen
+                </h1>
+                <div className='title-panel--languages d-flex align-items-center'>
+                    <p onClick={() => {changeLang('en')}} style={i18n.language == 'en' ? {'cursor': 'default', 'opacity': '1'} : {}}>EN</p>
+                    <span>|</span>
+                    <p onClick={() => {changeLang('pl')}} style={i18n.language == 'pl' ? {'cursor': 'default', 'opacity': '1'} : {}}>PL</p>
+                </div>
+            </div>
             <div className="navigation-panel">
                 <div className="container">
                     <div className="row justify-content-between">
-                        <p className="col-3"><a href='/'>Home</a></p>
+                        <p className="col-3"><a href='/'>{t('header.home')}</a></p>
                         <ul className="col-3">
-                            <p>Categories</p>
+                            <p>{t('header.categories.name')}</p>
                             <li>
-                                <ul><a href='/categories'>All</a></ul>
+                                <ul><a href='/categories'>{t('header.categories.all')}</a></ul>
                                 {categories.map((category) => {
-                                    return <ul key={category.id}><a href={`/categories/${category.name}`}>{category.name}</a></ul>
+                                    return <ul key={category.id}><a href={`/categories/${category.name}`}>{i18n.language == 'en' ? category.name : category.name_pl}</a></ul>
                                 })}
                             </li>
                         </ul>
-                        <p className="col-3"><a href='/sessions'>Sessions</a></p>
-                        <p className="col-3"><a href='/about_me'>About me</a></p>
+                        <p className="col-3"><a href='/sessions'>{t('header.sessions')}</a></p>
+                        <p className="col-3"><a href='/about_me'>{t('header.about_me')}</a></p>
                     </div>
                 </div>
             </div>
