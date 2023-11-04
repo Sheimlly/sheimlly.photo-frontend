@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../../fontello/css/fontello.css'
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from "react-redux";
 
 interface PhotoCategories {
     id: number;
@@ -19,6 +20,7 @@ const Header = () => {
     const [categories, setCategories] = useState<PhotoCategories[] | []>([]);
 
     useEffect(() => {
+        // i18n.changeLanguage(siteLanguage);
         axios
             .get<PhotoCategories[]>('/photos/categories/', {
                 headers: {
