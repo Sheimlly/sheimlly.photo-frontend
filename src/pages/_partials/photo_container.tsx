@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Photos } from '../_interfaces'
 import { useTranslation } from 'react-i18next';
 
@@ -11,18 +11,17 @@ interface PhotosListProps {
 }
 
 const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } : PhotosListProps) => {
-    const div_ref = useRef<HTMLElement>(null);
+    const div_ref = useRef<HTMLDivElement | null>(null);
     const [imageWidth, setImageWidth] = useState<number>(0);
 
     const render_info = c_name || s_name;
-    const img_opacity = always_visible_info ? '0.5' : '1';
 
-    const { i18n } = useTranslation()
+    const { i18n } = useTranslation();
     
-    const setRefElement = (el: HTMLElement) => {
+    const setRefElement = (el: HTMLDivElement) => {
         if (!el) return;
         div_ref.current = el;
-        setImageWidth(div_ref.current.offsetWidth);
+        setImageWidth(el.offsetWidth);
     };
 
     window.addEventListener('resize', () => {
@@ -36,7 +35,7 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } 
             <div className='row photos__container'>
                 {photos.map((photo, index) => {
                 return (
-                    <div ref={ref => { index === photos.length - 1 && setRefElement(ref)  }} key={index} style={{'height':imageWidth}} className='col-12 col-md-6 mb-4 mb-lg-0 col-md-6 col-lg-4 d-flex justify-content-center align-items-center photos__container--photo'>
+                    <div ref={ref => { ref && index === photos.length - 1 && setRefElement(ref) }} key={index} style={{'height':imageWidth}} className='col-12 col-md-6 mb-4 mb-lg-0 col-md-6 col-lg-4 d-flex justify-content-center align-items-center photos__container--photo'>
                         <img className={render_info ? 'photo_with_info' : ''} style={always_visible_info ? {'opacity':'0.5'} : {}} src={photo.image} alt={photo.name} />
                         { render_info &&
                             <div className={'photos__container--photo-info'} style={always_visible_info ? {'display':'flex', 'height':imageWidth, 'width':imageWidth} : {'height':imageWidth, 'width':imageWidth}}>
