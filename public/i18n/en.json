@@ -1,10 +1,7 @@
 {
     "header": {
         "home": "Home",
-        "categories": {
-            "name": "Categories",
-            "all": "All"
-        },
+        "categories": "Categories",
         "sessions": "Sessions",
         "about_me": "About me"
     },

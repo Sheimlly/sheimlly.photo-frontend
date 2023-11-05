@@ -49,15 +49,7 @@ const Header = () => {
                 <div className="container">
                     <div className="row justify-content-between">
                         <p className="col-3"><a href='/'>{t('header.home')}</a></p>
-                        <ul className="col-3">
-                            <p>{t('header.categories.name')}</p>
-                            <li>
-                                <ul><a href='/categories'>{t('header.categories.all')}</a></ul>
-                                {categories.map((category) => {
-                                    return <ul key={category.id}><a href={`/categories/${category.name}`}>{i18n.language == 'en' ? category.name : category.name_pl}</a></ul>
-                                })}
-                            </li>
-                        </ul>
+                        <p className='col-3'><a href='/categories'>{t('header.categories')}</a></p>
                         <p className="col-3"><a href='/sessions'>{t('header.sessions')}</a></p>
                         <p className="col-3"><a href='/about_me'>{t('header.about_me')}</a></p>
                     </div>
