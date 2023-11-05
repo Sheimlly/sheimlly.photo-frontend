@@ -40,9 +40,9 @@ const Header = () => {
                     Emilia Lorentsen
                 </h1>
                 <div className='title-panel--languages d-flex align-items-center'>
-                    <p onClick={() => {changeLang('en')}} style={i18n.language == 'en' ? {'cursor': 'default', 'opacity': '1'} : {}}>EN</p>
-                    <span>|</span>
-                    <p onClick={() => {changeLang('pl')}} style={i18n.language == 'pl' ? {'cursor': 'default', 'opacity': '1'} : {}}>PL</p>
+                    {i18n.language == 'en' ?
+                        <p onClick={() => {changeLang('pl')}}>PL</p> : <p onClick={() => {changeLang('en')}}>EN</p>
+                    }
                 </div>
             </div>
             <div className="navigation-panel">
