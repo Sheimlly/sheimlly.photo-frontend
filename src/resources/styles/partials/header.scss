@@ -1,8 +1,11 @@
 header {
     
     .title-panel {
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin: 50px 0;
+
+        @media screen and (min-width: 768px) {
+            margin: 25px 0;
+        }
 
         &--socials {
             a {
@@ -14,23 +17,31 @@ header {
             }
 
             i {
-                font-size: 30px;
+                font-size: 40px;
+                @media screen and (min-width: 768px) {
+                    font-size: 30px;
+                }
             }
         }
 
         h1 {
             text-align: center;
+            margin: 0;
         }
         
         &--languages {
             p {
                 margin: 0 5px;
-                font-size: 18px;
+                font-size: 24px;
                 font-weight: 600;
                 cursor: pointer;
 
                 &:hover {
                     opacity: 50%;
+                }
+
+                @media screen and (min-width: 768px) {
+                    font-size: 18px;
                 }
             }
         }
@@ -41,44 +52,20 @@ header {
         padding-bottom: 15px;
         background: #cca9cf;
         p {
-            font-size: 28px;
-            font-weight: 700;
-            width: auto;
+            font-size: 32px;
+            font-weight: 600;
+            // width: auto;
+            text-align: center;
 
-            margin: 0;
-        }
+            margin: 10px 0;
 
-        ul {
-            margin: 0;
-            width: auto;
-
-            li {
-                display: none;
-                position: absolute;
-                z-index: 1;
-                // padding-top: 30px;
-
-                ul {
-                    font-size: 24px;
-                    font-weight: 700;
-                    background: #cca9cf;
-                    padding: 20px 20px;
-                    border-top: 1px dashed gray;
-
-                    &:first-of-type {
-                        border-top: none;
-                    }
-                }
-            }
-
-            &:hover {
-                li {
-                    display: block;
-                }
+            @media screen and (min-width: 768px) {
+                margin: 0;
+                width: auto;
+                font-size: 28px;
+                font-weight: 700;
             }
         }
-
-        
 
         a {
             color: #000000;

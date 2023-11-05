@@ -32,11 +32,11 @@ const PhotosContainer = ( { photos, c_name, s_name, always_visible_info, date } 
     })
 
     return (
-        <section className='container photos my-5'>
+        <section className='container photos mt-5 mb-3 my-lg-5'>
             <div className='row photos__container'>
                 {photos.map((photo, index) => {
                 return (
-                    <div ref={ref => { index === photos.length - 1 && setRefElement(ref)  }} key={index} style={{'height':imageWidth}} className='col-4 d-flex justify-content-center align-items-center photos__container--photo'>
+                    <div ref={ref => { index === photos.length - 1 && setRefElement(ref)  }} key={index} style={{'height':imageWidth}} className='col-12 col-md-6 mb-4 mb-lg-0 col-md-6 col-lg-4 d-flex justify-content-center align-items-center photos__container--photo'>
                         <img className={render_info ? 'photo_with_info' : ''} style={always_visible_info ? {'opacity':'0.5'} : {}} src={photo.image} alt={photo.name} />
                         { render_info &&
                             <div className={'photos__container--photo-info'} style={always_visible_info ? {'display':'flex', 'height':imageWidth, 'width':imageWidth} : {'height':imageWidth, 'width':imageWidth}}>
