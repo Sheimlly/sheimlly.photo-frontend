@@ -6,7 +6,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 const getCurrentHost =
   import.meta.env.MODE === "development"
-    ? "http://localhost:5173"
+    ? "http://localhost:5174"
     : "LINK TO PROD";
 
 i18n

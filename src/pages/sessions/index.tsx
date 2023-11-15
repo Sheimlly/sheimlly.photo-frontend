@@ -23,7 +23,7 @@ const SessionsPhotos = () => {
                         }
                     )
                     .then((response) => {
-                        setPhotos(prevPhotos => [...prevPhotos, response.data[0]]);
+                        if(response.data.length !== 0) setPhotos(prevPhotos => [...prevPhotos, response.data[0]]);
                     })
             })
           });

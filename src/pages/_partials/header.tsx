@@ -15,20 +15,6 @@ const Header = () => {
     const changeLang = (lang_code: string) => {
         i18n.changeLanguage(lang_code);
     }
-
-    const [categories, setCategories] = useState<PhotoCategories[] | []>([]);
-
-    useEffect(() => {
-        axios
-            .get<PhotoCategories[]>('/photos/categories/', {
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-            .then(response => {
-                setCategories(response.data);
-            });
-    }, []);
     
     return (
         <header className="">
