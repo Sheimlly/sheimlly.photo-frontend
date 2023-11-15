@@ -3,9 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 const AboutMe = () => {
     const { t } = useTranslation();
+    const { i18n } = useTranslation();
 
     useEffect(() => {
-        document.title = 'About me';
+        if (i18n.language == 'pl') {
+            document.title = 'O mnie';
+        } else {
+            document.title = 'About me';
+        }
     }, [])
     return (
         <>

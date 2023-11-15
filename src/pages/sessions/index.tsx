@@ -8,6 +8,8 @@ const SessionsPhotos = () => {
     const [photos, setPhotos] = useState<Photos[]>([]);
 
     const { t } = useTranslation()
+    const { i18n } = useTranslation();
+
 
     useEffect(() => {
         axios
@@ -26,9 +28,13 @@ const SessionsPhotos = () => {
                         if(response.data.length !== 0) setPhotos(prevPhotos => [...prevPhotos, response.data[0]]);
                     })
             })
-          });
+        });
 
-          document.title = 'Sessions';
+        if (i18n.language == 'pl') {
+            document.title = 'Sesje';
+        } else {
+            document.title = 'Sessions';
+        }
       }, [])
     
     return (

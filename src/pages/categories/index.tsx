@@ -7,7 +7,8 @@ import { useTranslation } from 'react-i18next';
 const CategoriesPhotos = () => {
     const [photos, setPhotos] = useState<Photos[]>([]);
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
+    const { i18n } = useTranslation();
 
     useEffect(() => {
         axios
@@ -28,7 +29,11 @@ const CategoriesPhotos = () => {
             })
           });
 
-          document.title = 'Categories';
+        if (i18n.language == 'pl') {
+            document.title = 'Kategorie';
+        } else {
+            document.title = 'Categories';
+        }
       }, [])
     
     return (

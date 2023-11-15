@@ -23,7 +23,11 @@ const CategoryPhotos = () => {
           )
           .then(response => {
             setCategory(response.data[0]);
-            document.title = `${response.data[0]?.name}`;
+            if (i18n.language == 'pl') {
+                document.title = `${response.data[0]?.name_pl}`;
+            } else {
+                document.title = `${response.data[0]?.name}`;
+            }
             axios
                 .get<Photos[]>('/photos/', 
                     {
