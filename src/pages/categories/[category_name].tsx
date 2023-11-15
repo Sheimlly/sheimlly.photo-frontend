@@ -23,6 +23,7 @@ const CategoryPhotos = () => {
           )
           .then(response => {
             setCategory(response.data[0]);
+            document.title = `${response.data[0]?.name}`;
             axios
                 .get<Photos[]>('/photos/', 
                     {

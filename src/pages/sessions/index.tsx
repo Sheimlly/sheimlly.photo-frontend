@@ -27,6 +27,8 @@ const SessionsPhotos = () => {
                     })
             })
           });
+
+          document.title = 'Sessions';
       }, [])
     
     return (

@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AboutMe = () => {
     const { t } = useTranslation();
 
+    useEffect(() => {
+        document.title = 'About me';
+    }, [])
     return (
         <>
             <section className="about_me--header site_header container my-5">

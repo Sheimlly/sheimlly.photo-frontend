@@ -18,6 +18,8 @@ const HomePage = () => {
       .then(response => {
         setPhotos(response.data);
       });
+
+      document.title = 'Emilia Lorentsen';
   }, [])
 
   return (

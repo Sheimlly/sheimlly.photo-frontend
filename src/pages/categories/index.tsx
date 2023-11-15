@@ -27,6 +27,8 @@ const CategoriesPhotos = () => {
                     })
             })
           });
+
+          document.title = 'Categories';
       }, [])
     
     return (
