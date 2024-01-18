@@ -1,5 +1,73 @@
 header {
+    margin-bottom: 100px;
     
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+    }
+
+    .header {
+        &__more-container{
+            position: fixed;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 50px;
+            background: #9d64b3;
+            height: 75px;
+            transition-timing-function: ease-in-out;
+            transition: 250ms;
+
+            &--title {
+                // justify-self: center;
+                color: #FFFFFF;
+                font-size: 24px;
+            }
+
+            &--button {
+                margin-left: auto;
+                width: 50px;
+                height: 50px;
+                color: #FFFFFF;
+                cursor: pointer;
+                // justify-self: flex-end;
+            }
+
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+        }
+
+        &__container {
+            @media screen and (max-width: 767px) {
+                position: fixed;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background: #9d64b3;
+                display: none;
+            }
+
+            @media screen and (min-width: 768px) {
+                display: block !important;
+            }
+
+            &--button {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                margin-left: auto;
+                width: 50px;
+                height: 50px;
+                color: #FFFFFF;
+                cursor: pointer;
+                // justify-self: flex-end;
+
+                @media screen and (min-width: 768px) {
+                    display: none !important;
+                }
+            }
+        }
+    }
     .title-panel {
         margin: 50px 0;
 
@@ -7,16 +75,20 @@ header {
             margin: 25px 0;
         }
 
-        &--socials {
-            a {
-                color: #000000;
+        &__socials-container {
+            &--social {
+                color: #FFFFFF;
     
                 &:hover {
                     opacity: 50%;
                 }
+
+                @media screen and (min-width: 768px) {
+                    color: #9d64b3;
+                }
             }
 
-            i {
+            &--icon {
                 font-size: 40px;
                 @media screen and (min-width: 768px) {
                     font-size: 30px;
@@ -27,13 +99,19 @@ header {
         h1 {
             text-align: center;
             margin: 0;
+            color: #FFFFFF;
+
+            @media screen and (min-width: 768px) {
+                color: #9d64b3;
+            }
         }
         
-        &--languages {
-            p {
+        &__languages-container {
+            &--language {
                 margin: 0 5px;
                 font-size: 24px;
                 font-weight: 600;
+                color: #FFFFFF;
                 cursor: pointer;
 
                 &:hover {
@@ -42,6 +120,7 @@ header {
 
                 @media screen and (min-width: 768px) {
                     font-size: 18px;
+                    color: #9d64b3;
                 }
             }
         }
@@ -50,30 +129,42 @@ header {
     .navigation-panel {
         padding-top: 15px;
         padding-bottom: 15px;
-        background: #cca9cf;
-        p {
-            font-size: 32px;
-            font-weight: 600;
-            // width: auto;
-            text-align: center;
+        background: #9d64b3;
 
-            margin: 10px 0;
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             @media screen and (min-width: 768px) {
-                margin: 0;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            &--item {
+                font-size: 36px;
+                font-weight: 800;
                 width: auto;
-                font-size: 28px;
-                font-weight: 700;
-            }
-        }
+                text-align: center;
+                color: #FFFFFF;
+    
+                margin: 25px 0 !important;
 
-        a {
-            color: #000000;
-            text-decoration: none;
+                color: #FFFFFF;
+                text-decoration: none;
 
-            &:hover {
-                opacity: 50%;
+                cursor: pointer;
+    
+                &:hover {
+                    opacity: 50%;
+                }
+    
+                @media screen and (min-width: 768px) {
+                    margin: 0 !important;
+                    font-size: 28px;
+                }
             }
+
         }
     }
 }
